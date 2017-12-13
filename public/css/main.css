@@ -1,0 +1,81 @@
+body 
+{
+    font-family: 'Roboto', sans-serif;
+    color: #7f8c8d;
+}
+
+#content
+{
+    width: 75%;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    color: #ecf0f1;    
+    text-shadow: 0px 0px 5px #2c3e50;
+}
+
+ul
+{
+    color: #2c3e50;
+    text-shadow: none;
+    list-style: none;
+    text-align: left;
+    width: 700px;
+    margin: auto;
+    padding-top: 75px;
+}
+
+li
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.parking
+{
+    width: 700px;
+    margin: 30px auto;
+    color: #34495e;
+    border: 2px solid #34495e;
+    border-radius: 20px;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.parking p 
+{
+    margin: 5px;
+}
+
+.parking img
+{
+    width: 40px;
+    height: 40px;
+}
+
+input[type=text]
+{
+    height: 50px;
+    width: 800px;
+    font-size: 180%;
+    color: #34495e;
+}
+
+input[type=submit]
+{
+    height: 55px;
+    font-size: 180%;
+    background: #34495e;
+    border: 3px solid #2c3e50;
+    color: #ecf0f1;
+    border-radius: 25px;
+}
+
+#map 
+{
+    width: 600px;
+    height: 400px;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../css/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+        <title>Projet MongoDB - Accueil</title>
+    </head>
+
+
+    <body>
+        <form action="http://localhost:8080/updatedb" action="GET">
+            <input type="submit" value="Forcer la mise à jour des données">
+        </form>
+
+        <div id="content">
+            <h1>Trouvez le parking le plus proche de votre destination !</h1>   
+            
+            <br><br><br><br>
+
+            <form action="http://localhost:8080/location" method="POST">
+                <input type="text" name="adresse" id="adresse" placeholder="Votre adresse..." required>
+                <input type="submit" value="Chercher">
+            </form>
+        </div>
+    </body>
+</html>

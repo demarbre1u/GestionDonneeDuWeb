@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../css/main.css">
+        <title>Projet MongoDB - Parkings</title>
+    </head>
+
+    <body>
+        <div id="content">
+            <% if(adresseValide) { %>
+                <h1>Voici les parkings les plus proches de :</h1> 
+                <h2><%= adresseValide.formatted_address %></h2>
+                
+                <div class="parking"> 
+                    <img src="../img/crown_gold.png" alt="Gold crown">
+                    
+                    <div>
+                        <p> <%= p1.nom %> </p>
+                        <p> <%= p1.adresse %> </p>        
+                    </div>
+                    
+                    <p><%= p1.places %> / <%= p1.capacite %></p> 
+                </div>
+                
+                <div class="parking"> 
+                    <img src="../img/crown_silver.png" alt="Silver crown">
+                        
+                    <div>
+                        <p> <%= p2.nom %> </p>
+                        <p> <%= p2.adresse %> </p>        
+                    </div>
+                        
+                    <p><%= p2.places %> / <%= p2.capacite %></p> 
+                </div>
+                
+                <div class="parking"> 
+                    <img src="../img/crown_copper.png" alt="Copper crown">
+                        
+                    <div>
+                        <p> <%= p3.nom %> </p>
+                        <p> <%= p3.adresse %> </p>        
+                    </div>
+                            
+                    <p><%= p3.places %> / <%= p3.capacite %></p> 
+                </div>                    
+
+            <% } else { %>
+                <h1>Il semblerait que l'adresse fournie ne soit pas valide...</h1> 
+            <% } %>
+        </div>            
+    </body>
+</html>
