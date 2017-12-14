@@ -1,6 +1,6 @@
 # A propos
 
-Ce projet a été développé dans le cadre du cours de "Gestion de donnée du Web" de la LP CISIIE de 2017-2018.
+Ce projet a été développé dans le cadre du cours de "Gestion de donnée du Web" de la LP CISIIE de 2017-2018, par Allan DEMARBRE.
  
 # A quoi sert ce projet
 
