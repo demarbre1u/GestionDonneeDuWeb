@@ -2,6 +2,12 @@
 
 Ce projet a été développé dans le cadre du cours de "Gestion de donnée du Web" de la LP CISIIE de 2017-2018.
  
+# A quoi sert ce projet
+
+Ce projet permet d'identifier les 3 parkings les plus proches d'une adresse saisie par un utilisateur. 
+
+L'application indique les noms, les adresses, le nombre de places occupées ainsi que les capacités maximales des parkings.  
+
 # Comment installer le projet
 
 Pour fonctionner, le projet à besoin d'une base de données Mongo accessible depuis le port 27017.
