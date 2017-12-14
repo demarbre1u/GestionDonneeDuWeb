@@ -36,7 +36,7 @@ let updatedb = () =>
         // On se connecte à notre base de données Mongo
         MongoClient.connect("mongodb://localhost:27017/test", (error, db) => 
         {
-            if(error) console.log(error);
+            if(error) console.log("[Error] There was an issue while trying to connect to MongoDB. Please check if your MongoDB service is running, or if it's listening on the right port.");
             
             let parkings = db.collection("parking");
             
@@ -80,7 +80,7 @@ app.post('/location', (req, res) =>
     let parkingTab = [];    
     MongoClient.connect("mongodb://localhost:27017/test", (err, db) =>
     {
-        if(err) console.log(err);
+        if(err) console.log("[Error] There was an issue while trying to connect to MongoDB. Please check if your MongoDB service is running, or if it's listening on the right port.");
 
         let parkings = db.collection("parking").find().toArray( (err, results) =>
         {
@@ -100,7 +100,7 @@ app.post('/location', (req, res) =>
     // On récupère la latitude et la longitude de notre adresse via l'API GoogleMap
     gmAPI.geocode(geocodeParams, function(err, result)
     {
-        if(result.results.length > 0)
+        if(result != undefined && result.results.length > 0)
         {
             // On trie notre tableau en fonction de la proximité des parkings par rapport à notre adresse
             parkingTab.sort( (a, b) => 
@@ -116,7 +116,7 @@ app.post('/location', (req, res) =>
             
         // On render notre page avec les 3 parkings les plus proches
         res.render('location', {
-            adresseValide: result.results[0],
+            adresseValide: result != undefined ? result.results[0] : false,
             p1: parkingTab[0], 
             p2: parkingTab[1],
             p3: parkingTab[2]
