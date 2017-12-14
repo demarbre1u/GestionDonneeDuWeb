@@ -11,42 +11,46 @@
     <body>
         <div id="content">
             <% if(adresseValide) { %>
-                <h1>Voici les parkings les plus proches de :</h1> 
-                <h2><%= adresseValide.formatted_address %></h2>
-                
-                <div class="parking"> 
-                    <img src="../img/crown_gold.png" alt="Gold crown">
-                    
-                    <div>
-                        <p> <%= p1.nom %> </p>
-                        <p> <%= p1.adresse %> </p>        
-                    </div>
-                    
-                    <p><%= p1.places %> / <%= p1.capacite %></p> 
-                </div>
-                
-                <div class="parking"> 
-                    <img src="../img/crown_silver.png" alt="Silver crown">
-                        
-                    <div>
-                        <p> <%= p2.nom %> </p>
-                        <p> <%= p2.adresse %> </p>        
-                    </div>
-                        
-                    <p><%= p2.places %> / <%= p2.capacite %></p> 
-                </div>
-                
-                <div class="parking"> 
-                    <img src="../img/crown_copper.png" alt="Copper crown">
-                        
-                    <div>
-                        <p> <%= p3.nom %> </p>
-                        <p> <%= p3.adresse %> </p>        
-                    </div>
-                            
-                    <p><%= p3.places %> / <%= p3.capacite %></p> 
-                </div>                    
 
+                <% if(p1 == null) { %>
+                    <h1>Oops. Il semblerait qu'il n'y ait pas de données à exploiter... :(</h1>
+                <% } else {%>
+                    <h1>Voici les parkings les plus proches de :</h1> 
+                    <h2><%= adresseValide.formatted_address %></h2>
+                    
+                    <div class="parking"> 
+                        <img src="../img/crown_gold.png" alt="Gold crown">
+                        
+                        <div>
+                            <p> <%= p1.nom %> </p>
+                            <p> <%= p1.adresse %> </p>        
+                        </div>
+                        
+                        <p><%= p1.places %> / <%= p1.capacite %></p> 
+                    </div>
+                    
+                    <div class="parking"> 
+                        <img src="../img/crown_silver.png" alt="Silver crown">
+                            
+                        <div>
+                            <p> <%= p2.nom %> </p>
+                            <p> <%= p2.adresse %> </p>        
+                        </div>
+                            
+                        <p><%= p2.places %> / <%= p2.capacite %></p> 
+                    </div>
+                    
+                    <div class="parking"> 
+                        <img src="../img/crown_copper.png" alt="Copper crown">
+                            
+                        <div>
+                            <p> <%= p3.nom %> </p>
+                            <p> <%= p3.adresse %> </p>        
+                        </div>
+                                
+                        <p><%= p3.places %> / <%= p3.capacite %></p> 
+                    </div>                    
+                <% } %>
             <% } else { %>
                 <h1>Il semblerait que l'adresse fournie ne soit pas valide...</h1> 
             <% } %>
