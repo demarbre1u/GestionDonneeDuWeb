@@ -73,9 +73,3 @@ input[type=submit]
     color: #ecf0f1;
     border-radius: 25px;
 }
-
-#map 
-{
-    width: 600px;
-    height: 400px;
-}
