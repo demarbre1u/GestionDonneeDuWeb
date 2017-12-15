@@ -22,9 +22,9 @@
 
                     <form action="">
                         <input id="address" type="hidden" name="<%= adresseValide.geometry.location.lat %>/<%= adresseValide.geometry.location.lng %>">
-                        <input id="p1" type="hidden" name="<%= p1.nom %>/<%= p1.x %>/<%= p1.y %>">
-                        <input id="p2" type="hidden" name="<%= p2.nom %>/<%= p2.x %>/<%= p2.y %>">
-                        <input id="p3" type="hidden" name="<%= p3.nom %>/<%= p3.x %>/<%= p3.y %>">
+                        <input id="p1" type="hidden" name="<%= p1.nom %>, <%= p1.adresse %>/<%= p1.x %>/<%= p1.y %>">
+                        <input id="p2" type="hidden" name="<%= p2.nom %>, <%= p2.adresse %>/<%= p2.x %>/<%= p2.y %>">
+                        <input id="p3" type="hidden" name="<%= p3.nom %>, <%= p3.adresse %>/<%= p3.x %>/<%= p3.y %>">
                     </form>
 
                     <div class="parking"> 
