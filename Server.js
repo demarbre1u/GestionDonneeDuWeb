@@ -45,20 +45,31 @@ let updatedb = () =>
             // Pour chaque parking récupéré, on l'insère dans notre base de données
             response.data.features.forEach(element => 
             {
-                let toInsert = 
+                var geocodeParams = 
                 {
-                    nom: element.attributes.NOM,
-                    adresse: element.attributes.ADRESSE,
-                    places: element.attributes.PLACES,
-                    capacite: element.attributes.CAPACITE,
-                    x: element.geometry.x,
-                    y: element.geometry.y
-                }
-
-                parkings.insert(toInsert, null);
+                    "address": element.attributes.ADRESSE
+                };
+                   
+                // On récupère la latitude et la longitude de notre adresse via l'API GoogleMap
+                gmAPI.geocode(geocodeParams, function(err, result)
+                {
+                    console.log("Lat : " + result.results[0].geometry.location.lat)
+                    console.log("Lng : " + result.results[0].geometry.location.lng)
+                    
+                    let toInsert = 
+                    {
+                        nom: element.attributes.NOM,
+                        adresse: element.attributes.ADRESSE,
+                        places: element.attributes.PLACES == null ? 0 : element.attributes.PLACES,
+                        capacite: element.attributes.CAPACITE,
+                        x: result.results[0].geometry.location.lat,
+                        y: result.results[0].geometry.location.lng
+                    }
+    
+                    parkings.insert(toInsert, null);
+                });
             });
 
-            db.close();
         });
     }).catch( (error) =>
     {
@@ -92,7 +103,7 @@ app.post('/location', (req, res) =>
     });    
 
     // On récupère l'adresse dans la requête
-    var geocodeParams = 
+    let geocodeParams = 
     {
         "address": req.body.adresse
     };
