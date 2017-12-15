@@ -53,9 +53,6 @@ let updatedb = () =>
                 // On récupère la latitude et la longitude de notre adresse via l'API GoogleMap
                 gmAPI.geocode(geocodeParams, function(err, result)
                 {
-                    console.log("Lat : " + result.results[0].geometry.location.lat)
-                    console.log("Lng : " + result.results[0].geometry.location.lng)
-                    
                     let toInsert = 
                     {
                         nom: element.attributes.NOM,
