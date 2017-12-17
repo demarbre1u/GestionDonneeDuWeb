@@ -68,6 +68,8 @@ let updatedb = () =>
             });
 
         });
+
+        console.log("Database updated successfuly!");
     }).catch( (error) =>
     {
         console.log("There was a problem while trying to fetch data. The service you're trying to access may be down.");
