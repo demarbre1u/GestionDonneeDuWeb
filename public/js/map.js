@@ -37,4 +37,13 @@ function myMap()
         map: map,
         title: infop3[0]
     });
+
+    // Marqueur pour la destination  
+    let markerDestination = new google.maps.Marker({
+        position: new google.maps.LatLng(address[0], address[1]),
+        map: map,
+        icon: '../img/blue-dot.png', 
+        title: 'Votre destination'
+    });
+    
 } 
